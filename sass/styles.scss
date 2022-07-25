@@ -1,0 +1,8 @@
+@use 'navbar';
+@use 'body-and-main';
+@use 'footer';
+@use 'destinations';
+@use 'modal';
+
+$primary-color: hsl(45, 50%, 50%);
+$secundary-color: hsl(147, 50%, 50%);

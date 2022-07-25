@@ -1,0 +1,19 @@
+[
+    {"id":1, "category":"argentina", "name": "Salta", "img": "/assets/images/products-imgs/placeimg_370_370_nature.jpg", "price": 69.564, "checkin": "17 de Marzo del 2023", "checkout": "25 de Marzo del 2023"},
+    {"id":2, "category":"argentina", "name": "Chubut", "img": "/assets/images/products-imgs/placeimg_370_370_nature (1).jpg", "price": 115.372, "checkin": "10 de Febrero del 2023", "checkout": "25 de Febrero del 2023"},
+
+    {"id":3, "category":"brazil", "name": "Río de Janeiro", "img": "/assets/images/products-imgs/placeimg_370_370_nature (2).jpg", "price": 169.564, "checkin": "16 de Enero del 2023", "checkout": "23 de Enero del 2023"},
+    {"id":4, "category":"brazil", "name": "Camboriú", "img": "/assets/images/products-imgs/placeimg_370_370_nature (3).jpg", "price": 150.745, "checkin": "11 de Febrero del 2023", "checkout": "18 de Febrero del 2023"},
+
+    {"id":5, "category":"south america", "name": "Cataratas del Iguazú", "img": "/assets/images/products-imgs/placeimg_370_370_nature (4).jpg", "price": 181.299, "checkin": "17 de Diciembre del 2022", "checkout": "29 de Diciembre del 2022"},
+    {"id":6, "category":"south america", "name": "Machu Picchu", "img": "/assets/images/products-imgs/placeimg_370_370_nature (5).jpg", "price": 176.519, "checkin": "5 de abril del 2023", "checkout": "19 de abril del 2023"},
+
+    {"id":7, "category":"caribbean", "name": "Cancún", "img": "/assets/images/products-imgs/placeimg_370_370_nature (6).jpg", "price": 312.766, "checkin": "10 de Marzo del 2023", "checkout": "25 de Marzo del 2023"},
+    {"id":8, "category":"caribbean", "name": "Punta Cana", "img": "/assets/images/products-imgs/placeimg_370_370_nature (7).jpg", "price": 281.327, "checkin": "13 de noviembre del 2022", "checkout": "20 de Noviembre del 2022"},
+
+    {"id":9, "category":"europe", "name": "Sicilia", "img": "/assets/images/products-imgs/placeimg_370_370_nature (8).jpg", "price": 390.199, "checkin": "7 de Octubre del 2022", "checkout": "14 de Octubre del 2022"},
+    {"id":10, "category":"europe", "name": "Paris", "img": "/assets/images/products-imgs/placeimg_370_370_nature (9).jpg", "price": 415.799, "checkin": "9 de Diciembre del 2022", "checkout": "19 de Diciembre del 2022"},
+
+    {"id":11, "category":"exotic", "name": "Dubai", "img": "/assets/images/products-imgs/placeimg_370_370_nature (10).jpg", "price": 730.999, "checkin": "10 de Mayo del 2023", "checkout": "25 de Mayo del 2023"},
+    {"id":12, "category":"exotic", "name": "Hong Kong", "img": "/assets/images/products-imgs/placeimg_370_370_nature (11).jpg", "price": 615.579, "checkin": "20 de Junio del 2023", "checkout": "30 de Junio del 2023"}
+]

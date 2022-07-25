@@ -1,0 +1,34 @@
+.modal-container{
+    opacity: 100;
+    visibility: '';
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+
+.modal{
+    width: 50%;
+    height: 50%;
+    background-color: #fff;
+    overflow: hidden;
+
+    position: relative;
+    transition: transform 1s;
+    transform: translateY(0%);
+}
+
+.modal-close{
+    transform: translateY(-200%);
+}
+
+.modal > img{
+    height: 50%;
+}

@@ -1,18 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
-    <title>Javascript | 30415</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap"
+    rel="stylesheet">
+    <title>notRealTravel</title>
 </head>
-<body>
-    <h1 class="title">Desafío complementario: Incorporar arrays</h1>
-    <h2 class="sub-title">Franco Delgado - 30415</h2>
-    <p class="instructions">Al abrir consola verás el console.log de un array de objetos (que son los 3 destinos que acabas de ingresar)</p>
-    <p class="instructions">Estos objetos contienen el país destino, su año a viajar y el monto disponible para los gastos del mismo</p>
 
+<body>
+    <header class="headersec">
+        <nav class="navbar">
+            <ul class="navbar-container">
+                <li class="navbar__li navbar__li--logo"><a href="./index.html"><img src="assets/logo/notRealTravel.png"
+                            class="logo" alt="logo"></a></li>
+                <li class="navbar__li"><a href="./destinos.html" class="navbar__item-link">Destinos</a></li>
+                <li class="navbar__li"><a href="#" class="navbar__item-link">Quiénes somos</a></li>
+                <li class="navbar__li"><a href="#" class="navbar__item-link">Contacto</a></li>
+                <li class="navbar__li navbar__li--cart"><a href="./cart.html" class="navbar__item-link"><i
+                            class="fa-solid fa-earth-americas"></i> Mis viajes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-home-container">
+        <p class="user-greet" id="user-greet">¡Bienvenido!</p>
+        <h1 class="title">¿A dónde desea viajar?</h1>
+
+        <section class="travel-container">
+            <article class="travel__option travel__option--argentina">
+                <div class="img-container">
+                    <a href="#">
+                        <img class="travel-img" src="assets/images/arg.jpg" alt="argentina">
+                        <p class="travel-link">Argentina</p>
+                    </a>
+                </div>
+            </article>
+
+            <article class="travel__option travel__option--brazil">
+                <div class="img-container">
+                    <a href="#">
+                        <img class="travel-img" src="assets/images/br.jpg" alt="brasil">
+                        <p class="travel-link">Brasil</p>
+                    </a>
+                </div>
+            </article>
+
+            <article class="travel__option travel__option--caribbean">
+                <div class="img-container">
+                    <a href="#">
+                        <img class="travel-img" src="assets/images/caribbean.jpg" alt="caribe">
+                        <p class="travel-link">Caribe</p>
+                    </a>
+            </article>
+            </div>
+            <article class="travel__option travel__option--south-america">
+                <div class="img-container">
+                    <a href="#">
+                        <img class="travel-img" src="assets/images/south-america.jpg" alt="sudamerica">
+                        <p class="travel-link">Sudamérica</p>
+                    </a>
+                </div>
+            </article>
+            <article class="travel__option travel__option--europe">
+                <div class="img-container">
+                    <a href="#">
+                        <img class="travel-img" src="assets/images/europe.jpg" alt="europa">
+                        <p class="travel-link">Europa</p>
+                    </a>
+                </div>
+            </article>
+
+            <article class="travel__option travel__option--exotic">
+                <div class="img-container">
+                    <a href="#">
+                        <img class="travel-img" src="assets/images/exotic.jpg" alt="exotico">
+                        <p class="travel-link">Exótico</p>
+                    </a>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <div class="form-container">
+        <form class="flex-form" id="form">
+            <label class="input-center">Nombre:
+                <input type="text" placeholder="tu nombre" name="firstname">
+            </label>
+            <label class="input-center">Apellido:
+                <input type="text" placeholder="tu apellido" name="lastname">
+            </label>
+            <label class="input-center">Edad:
+                <input type="text" placeholder="tu edad" name="age">
+            </label>
+            <label class="input-center">Email:
+                <input type="email" placeholder="ej: unemail@gmail.com" name="email">
+            </label>
+            <label class="input-center">Tel:
+                <input type="tel" placeholder="ej: 341 277-7777" name="tel">
+            </label>
+            <p class="menssage-title">Dejanos aquí abajo tu consulta</p>
+            <textarea class="text-area" placeholder="mensaje" name="mensaje"></textarea>
+            <button class="sbt-button" id="submit-button" type="submit">Enviar</button>
+        </form>
+    </div>
+    <footer class="footersec">
+        <h2 class="contacto-title">Nuestras redes</h2>
+        <ul class="footer__links">
+            <li class="contact-icon">1</li>
+            <li class="contact-icon">2</li>
+            <li class="contact-icon">3</li>
+        </ul>
+        <p class="copyrights">All rights reserved - NotRealTravel®</p>
+    </footer>
     <script src="/scripts/scripts.js"></script>
+    <script src="https://kit.fontawesome.com/057012141a.js" crossorigin="anonymous"></script>
 </body>
-</html>|
+
+</html>
