@@ -26,32 +26,33 @@
     <div><h1 class="body-title" id="h1">¡Mira todos nuestros destinos!</h1></div>
     <main class="main-container">
         
-        <div class="products-item" id="product-item"></div>
+        <div class="des-items-container" id="products-container"></div>
         <div class="modal-container">
             <div class="modal modal-close">
-                <p class="close">X</p>
-                <div class="detail-template" id="detail-template">
+                <p class="close">x</p>
                     <div class="detail-container" id="detail-container">
-                        <h3 class="detail__title" id="detail-title"></h3>
-                        <img src="" alt="destino" class="detail__img-container" id="detail-img">
-                        <p class="description" id="card"></p>
-                        <h4 class="detail__check" id="detail-checkin"></h4>
-                        <h4 class="detail__check" id="detail-checkout"></h4>
-                        <h5 class="detail__price" id="detail-price"></h5>
-                        <button class="buy-btn">Agregar al carrito</button>
+                        <div class="left-center">
+                            <img src="" alt="destino" class="detail__img-container" id="detail-img">
+                        </div>
+                        <div class="right-center">
+                            <h3 class="detail__title" id="detail-title"></h3>
+                            <p class="detail__description" id="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ut adipisci saepe eos quis, pariatur labore corrupti maxime molestias natus!</p>
+                            <p class="detail__check " id="detail-checkin"></p>
+                            <p class="detail__check " id="detail-checkout"></p>
+                            <h5 class="detail__price" id="detail-price"></h5>
+                        </div>
                     </div>
             </div>
         </div>
-        
     </main>
 
 
     <footer class="footersec">
         <h2 class="contacto-title">Nuestras redes</h2>
         <ul class="footer__links">
-            <li class="contact-icon">1</li>
-            <li class="contact-icon">2</li>
-            <li class="contact-icon">3</li>
+            <li class="contact-icon">Instagram</li>
+            <li class="contact-icon">Twitter</li>
+            <li class="contact-icon">Facebook</li>
         </ul>
         <p class="copyrights">All rights reserved - NotRealTravel®</p>
     </footer>
@@ -62,10 +63,13 @@
             <h3 class="card__title" id="card-title"></h3>
             <img src="" alt="destino" class="card__img-container" id="card-img">
             <p class="description" id="card"></p>
-            <h4 class="card__check" id="card-checkin"></h4>
-            <h4 class="card__check" id="card-checkout"></h4>
+            <p class="card__check card__check--in" id="card-checkin"></p>
+            <p class="card__check card__check--out" id="card-checkout"></p>
             <h5 class="card__price" id="card-price"></h5>
-            <a href="#" class="cta"> Detalle</a>
+            <div>
+                <a href="#" class="btn cta">Detalle</a>
+                <a href="#" id="buy-btn" class="btn buy-btn">Agregar al carrito</a>
+            </div>
         </div>
     </template>
 

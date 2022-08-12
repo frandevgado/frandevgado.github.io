@@ -8,3 +8,4 @@ const sendFormHandler = (e) =>{
 }
 
 sendForm.addEventListener('click', sendFormHandler)
+

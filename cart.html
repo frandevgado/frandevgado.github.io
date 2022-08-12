@@ -14,9 +14,8 @@
     <header class="headersec">
         <nav class="navbar">
             <ul class="navbar-container">
-                <li class="navbar__li navbar__li--logo"><img src="assets/logo/notRealTravel.png" class="logo" alt="logo"></li>
-                <li class="navbar__li"><a href="./index.html" class="navbar__item-link">Home</a></li>
-                <li class="navbar__li"><a href="#" class="navbar__item-link">Destinos</a></li>
+                <li class="navbar__li navbar__li--logo"><a href="./index.html"><img src="assets/logo/notRealTravel.png" class="logo" alt="logo"></a></li>
+                <li class="navbar__li"><a href="./destinos.html" class="navbar__item-link">Destinos</a></li>
                 <li class="navbar__li"><a href="#" class="navbar__item-link">Quiénes somos</a></li>
                 <li class="navbar__li"><a href="#" class="navbar__item-link">Contacto</a></li>
                 <li class="navbar__li navbar__li--cart" ><a href="./cart.html" class="navbar__item-link"><i class="fa-solid fa-earth-americas"></i> Mis viajes</a></li>
@@ -24,17 +23,38 @@
         </nav>
     </header>
 
+    <main class="cart-main-container">
+        <div class="cart-items-container" id="cart-items-container"></div>
+    </main>
 
     <footer class="footersec">
         <h2 class="contacto-title">Nuestras redes</h2>
         <ul class="footer__links">
-            <li class="contact-icon">1</li>
-            <li class="contact-icon">2</li>
-            <li class="contact-icon">3</li>
+            <li class="contact-icon">Instagram</li>
+            <li class="contact-icon">Twitter</li>
+            <li class="contact-icon">Facebook</li>
         </ul>
         <p class="copyrights">All rights reserved - NotRealTravel®</p>
     </footer>
-    <script src="/scripts/scripts.js"></script>
+
+
+<!--template de producto en carrito-->
+    <template id="item-cart-template">
+        <div class="cart-item-container" id="">
+            <button class="remove-button" id="" onclick="">X</button>
+            <h3 class="cart-item__title" id="cart-item-title"></h3>
+            <img src="" alt="destino" class="cart-item__img-container" id="cart-item-img">
+            <h5 class="cart-item__price" id="cart-item-price"></h5>
+            <div class="counter-container">
+            <button class="qbtn decrease-button" id="" onclick="">-</button>
+            <p class="quantity" id="cart-item-quantity"></p>
+            <button class="qbtn increase-button" id="" onclick="">+</button>
+            </div>
+            <p class="subtotal" id="subtotal"></p>
+        </div>
+    </template>
+
+    <script src="/scripts/cart.js"></script>
     <script src="https://kit.fontawesome.com/057012141a.js" crossorigin="anonymous"></script>
 </body>
 </html>

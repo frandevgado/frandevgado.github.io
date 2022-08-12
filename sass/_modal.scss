@@ -17,8 +17,15 @@
 .modal{
     width: 50%;
     height: 50%;
-    background-color: #fff;
+    min-height: 400px;
+    background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+    opacity: 1;
     overflow: hidden;
+    border-radius: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 
     position: relative;
     transition: transform 1s;
@@ -29,6 +36,69 @@
     transform: translateY(-200%);
 }
 
-.modal > img{
-    height: 50%;
+
+.close{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 25px;
+    height: 25px;
+    border-radius: 13px;
+    background-color: #c5c0b7;
+
+    cursor: pointer;
+    text-align: center;
+    font-weight: 400;
+    color: #fff;
+}
+
+.detail__img-container{
+    height: 40%;
+    width: 40%;
+}
+
+// Travel detail
+
+.detail-container{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.left-center{
+    display:flex;
+    align-items: center;
+}
+
+.right-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5em;
+}
+
+.detail__title{
+    margin: 1em 0em;
+    color:rgb(36, 36, 36);
+}
+.detail__description{
+    color:rgb(36, 36, 36);
+    margin-bottom: 1em;
+}
+.detail__check{
+    margin: -5px 0px;
+    color:rgb(36, 36, 36);
+}
+.detail__img-container{
+    height: 300px;
+    width: 300px;
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
+
+.detail__price{
+    color: rgb(36, 36, 36);
+    margin: 2em 0em;
 }
