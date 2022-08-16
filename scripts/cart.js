@@ -1,7 +1,9 @@
 const allItemsContainer = document.getElementById('cart-items-container')
 const itemCartTemplate = document.getElementById('item-cart-template').content
 const itemContainer = document.querySelectorAll('.cart-item-container')
+const divTotalPrice = document.getElementById('total-price-cart')
 
+const navCartNumber = document.getElementById('cart-number')
 
 const fragment = document.createDocumentFragment()
 
@@ -13,8 +15,22 @@ const fetchCart = () =>{
     if(localStorage.getItem('cart')){
         const cart = JSON.parse(localStorage.getItem('cart'))
         updateItemsInCart(cart)
+        
     }
 }
+
+const navCartQuantity = (cart) =>{
+    let quantities = []
+    cart.forEach(prod =>{
+        quantities.push(prod.quantity)
+    })
+    let totalQuantInCart = quantities.reduce((acc,value) => acc + value, 0)
+    navCartNumber.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Mis viajes<span class="cart-number">(${totalQuantInCart})</span>`
+    if(totalQuantInCart === 0){
+        navCartNumber.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Mis viajes`
+    }
+}
+
 
 const updateItemsInCart = itemsInCart =>{
     allItemsContainer.innerHTML = ''
@@ -35,8 +51,9 @@ const updateItemsInCart = itemsInCart =>{
         fragment.appendChild(clone)
     })
 
-
     allItemsContainer.appendChild(fragment)
+    navCartQuantity(itemsInCart)
+    totalPriceInCart(itemsInCart)
 }
 
 
@@ -86,5 +103,22 @@ const increaseQuantity = (prodId) =>{
     updateLocalStorage(cart)
 }
 
-
-
+const totalPriceInCart = (cart) =>{
+    divTotalPrice.innerHTML = ''
+    let subtotals = []
+    cart.forEach(prod =>{
+        const prodSubtotal =  prod.price * prod.quantity
+        subtotals.push(prodSubtotal)
+    })
+    const totalPrice = subtotals.reduce((acc,value) => acc + value, 0)
+    if(cart.length !== 0){
+    const totalPriceNumber = document.createElement('P')
+    totalPriceNumber.className = 'total-div'
+    totalPriceNumber.textContent = `Precio total: $${totalPrice}`
+    divTotalPrice.appendChild(totalPriceNumber)
+    }else{
+        const emptyCart = document.createElement('P')
+        emptyCart.textContent = `El carrito está vacío ¡Comience a llenarlo de aventuras!`
+        divTotalPrice.appendChild(emptyCart)
+    }
+}

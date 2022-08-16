@@ -18,15 +18,16 @@
                 <li class="navbar__li"><a href="./destinos.html" class="navbar__item-link">Destinos</a></li>
                 <li class="navbar__li"><a href="#" class="navbar__item-link">Quiénes somos</a></li>
                 <li class="navbar__li"><a href="#" class="navbar__item-link">Contacto</a></li>
-                <li class="navbar__li navbar__li--cart" ><a href="./cart.html" class="navbar__item-link"><i class="fa-solid fa-earth-americas"></i> Mis viajes</a></li>
+                <li class="navbar__li navbar__li--cart" ><a href="./cart.html" id="cart-number" class="navbar__item-link number-align"></a></li>
             </ul>
         </nav>
     </header>
 
     <main class="cart-main-container">
         <div class="cart-items-container" id="cart-items-container"></div>
+        <div id="total-price-cart"></div>
     </main>
-
+    
     <footer class="footersec">
         <h2 class="contacto-title">Nuestras redes</h2>
         <ul class="footer__links">
@@ -56,5 +57,6 @@
 
     <script src="/scripts/cart.js"></script>
     <script src="https://kit.fontawesome.com/057012141a.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

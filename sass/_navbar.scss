@@ -43,3 +43,15 @@
 .logo{
     width: 200px;
 }
+
+.number-align{
+    position:relative;
+}
+
+.cart-number{
+    position: absolute;
+    margin-left: 2px;
+    font-size: .8em;
+    color: hsl(29, 100%, 50%);
+}
+

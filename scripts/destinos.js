@@ -39,7 +39,30 @@ const detailPrice = document.getElementById('detail-price')
         }
     }
     
-   
+    const navCartNumber = document.getElementById('cart-number')
+
+    document.addEventListener('DOMContentLoaded', () =>{
+        fetchCart()
+    })
+    
+    const fetchCart = () =>{
+        if(localStorage.getItem('cart')){
+            const cart = JSON.parse(localStorage.getItem('cart'))     
+            navCartQuantity(cart)
+        }
+    }
+    
+    const navCartQuantity = (cart) =>{
+        let quantities = []
+        cart.forEach(prod =>{
+            quantities.push(prod.quantity)
+        })
+        let totalQuantInCart = quantities.reduce((acc,value) => acc + value, 0)
+        navCartNumber.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Mis viajes <span class="cart-number">(${totalQuantInCart})</span>`
+        if(totalQuantInCart === 0){
+            navCartNumber.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Mis viajes`
+        }
+    }
     
     const printCards = data =>{
         data.forEach(product =>{
@@ -94,11 +117,24 @@ productItemsContainer.addEventListener('click', (e) =>{
         modal.classList.toggle("modal-close")
         modal.classList.add("a-class")
     }else if(e.target.dataset.name) {
+        
         e.preventDefault()
         addToCart(e.target.parentElement.parentElement)
+        navCartQuantity(cart) 
+        Swal.fire({
+            title: 'Éxito',
+            text: 'Agregaste el destino al carrito',
+            icon: 'success',
+            confirmButtonText: 'Cerrar'
+          })
     }
     e.stopPropagation()
 })
+
+
+
+
+
 
 
 // CloseModalHandler
@@ -154,5 +190,4 @@ modalC.addEventListener('click', (e) =>{
             cart.push(productToCart)
             localStorage.setItem("cart", JSON.stringify(cart))
         }
-        
     }
