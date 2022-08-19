@@ -12,14 +12,21 @@
 </head>
 <body>
     <header class="headersec">
-        <nav class="navbar">
-            <ul class="navbar-container">
-                <li class="navbar__li navbar__li--logo"><a href="./index.html"><img src="assets/logo/notRealTravel.png" class="logo" alt="logo"></a></li>
+        <nav id="navbar" class="navbar">
+            <div class="a-ver">
+                <a href="./index.html"><img src="assets/logo/notRealTravel.png" class="logo" alt="logo"></a>
+            </div>
+            <ul id="navbar-menu" class="navbar__menu">
                 <li class="navbar__li"><a href="./destinos.html" class="navbar__item-link">Destinos</a></li>
                 <li class="navbar__li"><a href="#" class="navbar__item-link">Quiénes somos</a></li>
                 <li class="navbar__li"><a href="#" class="navbar__item-link">Contacto</a></li>
                 <li class="navbar__li navbar__li--cart" ><a href="./cart.html" id="cart-number" class="navbar__item-link number-align"><i class="fa-solid fa-earth-americas"></i></a></li>
             </ul>
+            <div id="bars-menu" class="bars__menu">
+                <span id="bar-line1" class="line1__bars-menu"></span>
+                <span id="bar-line2" class="line2__bars-menu"></span>
+                <span id="bar-line3" class="line3__bars-menu"></span>
+            </div>
         </nav>
     </header>
 
@@ -48,13 +55,13 @@
     </main>
 
     <footer class="footersec">
-        <h2 class="contacto-title">Nuestras redes</h2>
+        <h2 class="social-title">Sociales</h2>
         <ul class="footer__links">
-            <li class="contact-icon">Instagram</li>
-            <li class="contact-icon">Twitter</li>
-            <li class="contact-icon">Facebook</li>
+            <li class="social-li"><a class="social-link" href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+            <li class="social-li"><a class="social-link" href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+            <li class="social-li"><a class="social-link" href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
         </ul>
-        <p class="copyrights">All rights reserved - NotRealTravel®</p>
+        <p class="copyrights">NotRealTravel® | Franco Delgado</p>
     </footer>
 
 
@@ -73,8 +80,7 @@
         </div>
     </template>
 
-
-
+    
     <script src="/scripts/destinos.js"></script>
     <script src="https://kit.fontawesome.com/057012141a.js" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

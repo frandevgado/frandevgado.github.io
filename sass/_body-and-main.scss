@@ -1,16 +1,16 @@
-
-
 body{
     background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
 .user-greet{
-    padding: 1em 0em;
+    margin: 1em 0 .5em 0;
+    
     font-size: 2em;
 }
 
 .title{
-    padding: .5em 0em;
+    margin-bottom: 1em;
+    
     color: hsl(29, 100%, 50%);
 }
 
@@ -24,7 +24,8 @@ body{
 
 .travel-container{
     margin: 0 auto;
-    width: 75vw;
+    width: 65vw;
+    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -38,9 +39,8 @@ body{
         margin-top: 5px;
         width: 300px;
         height: 300px;
-
-
         border-radius: 50%;
+
         object-fit: cover;
 
 }
@@ -50,8 +50,8 @@ body{
     border-style: none;
     background-image: linear-gradient(120deg, #f6d365 15%, #fda085 85%);
     position:relative;
-    width: 350px;
-    height: 350px;
+    width: 310px;
+    height: 310px;
     border-radius: 50%;
     
     display: flex;
@@ -81,6 +81,15 @@ body{
     padding: 1em 0em;
     border-radius: 2em;
     background-color: hsla(0, 100%, 100%, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.form__contact-title{
+    font-size: 2em;
+    font-weight: 500;
 }
 
 .flex-form{
@@ -107,4 +116,12 @@ body{
     margin: 0 auto;
     display: inline-block;
     width: 150px;
+}
+
+@media screen and (max-width: 640px){
+
+    .title{
+        font-size: 1.5em;
+    }
+
 }

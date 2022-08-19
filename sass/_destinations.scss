@@ -12,7 +12,6 @@
 }
 
 .des-items-container{
-
     margin: 0 auto;
     width: 80vw;
     display: flex;
@@ -88,4 +87,37 @@ span{
 
 .card__check{
     display: none;
+}
+
+@media screen and (max-width: 1280px) {
+    
+    .card-container{
+        width: 250px;
+        height: 320px;
+        background-color: hsla(0, 0%, 100%, 0.25);
+        border-radius: 2em;
+        margin: 1em;
+    
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        
+        align-items: center;
+    
+    }
+    
+    .card__img-container{
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media screen and (max-width: 576px){
+
+    .body-title{
+        font-size: 5vw;
+    }
+
+
 }

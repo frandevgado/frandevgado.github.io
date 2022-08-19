@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', () =>{
+    fetchCart()
+    hamburgerMenu()
+})
+
 const allItemsContainer = document.getElementById('cart-items-container')
 const itemCartTemplate = document.getElementById('item-cart-template').content
 const itemContainer = document.querySelectorAll('.cart-item-container')
@@ -7,9 +12,13 @@ const navCartNumber = document.getElementById('cart-number')
 
 const fragment = document.createDocumentFragment()
 
-document.addEventListener('DOMContentLoaded', () =>{
-    fetchCart()
-})
+// hamburger menu variables
+const navBar = document.getElementById('navbar')
+const navMenu = document.getElementById('navbar-menu')
+const navHamburger = document.getElementById('bars-menu')
+const lineOne = document.getElementById('bar-line1')
+const lineTwo = document.getElementById('bar-line2')
+const lineThree = document.getElementById('bar-line3')
 
 const fetchCart = () =>{
     if(localStorage.getItem('cart')){
@@ -17,6 +26,18 @@ const fetchCart = () =>{
         updateItemsInCart(cart)
         
     }
+}
+
+const hamburgerMenu = () =>{
+    navHamburger.addEventListener('click', displayMenu)
+}
+
+const displayMenu = () =>{
+    lineOne.classList.toggle('activeline1__bars-menu')
+    lineTwo.classList.toggle('activeline2__bars-menu')
+    lineThree.classList.toggle('activeline3__bars-menu')
+    navMenu.classList.toggle('active')
+    navBar.classList.toggle('active')
 }
 
 const navCartQuantity = (cart) =>{

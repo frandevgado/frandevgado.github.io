@@ -2,8 +2,18 @@ document.addEventListener('DOMContentLoaded', () =>{
     fetchData()
     if(localStorage.getItem('cart')){
         cart = JSON.parse(localStorage.getItem("cart"))
+        
     }
 })
+
+// hamburger menu variables
+const navBar = document.getElementById('navbar')
+const navMenu = document.getElementById('navbar-menu')
+const navHamburger = document.getElementById('bars-menu')
+const lineOne = document.getElementById('bar-line1')
+const lineTwo = document.getElementById('bar-line2')
+const lineThree = document.getElementById('bar-line3')
+
 
 // item list variables
 const productItemsContainer = document.getElementById('products-container')
@@ -25,6 +35,18 @@ const detailCheckIn = document.getElementById('detail-checkin')
 const detailCheckOut = document.getElementById('detail-checkout')
 const detailPrice = document.getElementById('detail-price')
 
+const hamburgerMenu = () =>{
+    navHamburger.addEventListener('click', displayMenu)
+}
+
+
+const displayMenu = () =>{
+    lineOne.classList.toggle('activeline1__bars-menu')
+    lineTwo.classList.toggle('activeline2__bars-menu')
+    lineThree.classList.toggle('activeline3__bars-menu')
+    navMenu.classList.toggle('active')
+    navBar.classList.toggle('active')
+}
 
 
 // logica para traer y "pintar" los productos
@@ -43,6 +65,7 @@ const detailPrice = document.getElementById('detail-price')
 
     document.addEventListener('DOMContentLoaded', () =>{
         fetchCart()
+        hamburgerMenu()
     })
     
     const fetchCart = () =>{

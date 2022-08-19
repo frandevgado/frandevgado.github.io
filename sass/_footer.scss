@@ -1,6 +1,7 @@
 .footersec{
     width: 80vw;
     margin: 0 auto;
+    padding: .1em 0 .7em;
     margin-top: 4em;
     background-color: hsla(60, 5%, 8%, .9);
 
@@ -12,13 +13,49 @@
     justify-content: center;
     align-items: center;
 
-    color: white;
+    color: hsla(29, 100%, 50%, .8);
 }
 
+.footer__links{
+    display: flex;
+    gap: 1em;
+}
 
 
 .input-center{
     display: inline-block;
     align-self: center;
+    
+}
 
+.social-title{
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.social-li{
+    list-style-type: none;
+    
+}
+.social-link{
+    text-decoration: none;
+    color: #fff;
+}
+
+.fa-brands{
+    font-size: 2em;
+}
+
+.copyrights{
+    margin-top: 1em;
+
+    color: #fff;
+    font-weight: 200;
+    font-size: .9em;
+}
+
+@media screen and (max-width: 1280px){
+    .footersec{
+        width: 100%;
+    }
 }
