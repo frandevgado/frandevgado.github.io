@@ -7,6 +7,9 @@ const allItemsContainer = document.getElementById('cart-items-container')
 const itemCartTemplate = document.getElementById('item-cart-template').content
 const itemContainer = document.querySelectorAll('.cart-item-container')
 const divTotalPrice = document.getElementById('total-price-cart')
+const emptyCartDiv = document.getElementById('empty-cart-div')
+const cartMainContainer = document.getElementById('cart-main-container')
+
 
 const navCartNumber = document.getElementById('cart-number')
 
@@ -24,7 +27,6 @@ const fetchCart = () =>{
     if(localStorage.getItem('cart')){
         const cart = JSON.parse(localStorage.getItem('cart'))
         updateItemsInCart(cart)
-        
     }
 }
 
@@ -46,7 +48,7 @@ const navCartQuantity = (cart) =>{
         quantities.push(prod.quantity)
     })
     let totalQuantInCart = quantities.reduce((acc,value) => acc + value, 0)
-    navCartNumber.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Mis viajes<span class="cart-number">(${totalQuantInCart})</span>`
+    navCartNumber.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Mis viajes<span class="cart-number">+${totalQuantInCart}</span>`
     if(totalQuantInCart === 0){
         navCartNumber.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Mis viajes`
     }
@@ -74,7 +76,7 @@ const updateItemsInCart = itemsInCart =>{
 
     allItemsContainer.appendChild(fragment)
     navCartQuantity(itemsInCart)
-    totalPriceInCart(itemsInCart)
+    cartData(itemsInCart)
 }
 
 
@@ -108,8 +110,9 @@ const decreaseQuantity = (prodId) =>{
         updateItemsInCart(cart)
         updateLocalStorage(cart)
     }
-    updateItemsInCart(cart)
     updateLocalStorage(cart)
+    updateItemsInCart(cart)
+    cartData(cart)
 }
 
 
@@ -124,7 +127,7 @@ const increaseQuantity = (prodId) =>{
     updateLocalStorage(cart)
 }
 
-const totalPriceInCart = (cart) =>{
+const cartData = (cart) =>{
     divTotalPrice.innerHTML = ''
     let subtotals = []
     cart.forEach(prod =>{
@@ -137,9 +140,21 @@ const totalPriceInCart = (cart) =>{
     totalPriceNumber.className = 'total-div'
     totalPriceNumber.textContent = `Precio total: $${totalPrice}`
     divTotalPrice.appendChild(totalPriceNumber)
-    }else{
-        const emptyCart = document.createElement('P')
-        emptyCart.textContent = `El carrito está vacío ¡Comience a llenarlo de aventuras!`
-        divTotalPrice.appendChild(emptyCart)
-    }
+    }else emptyCartNotice()
+}
+
+const emptyCartNotice = () =>{
+    emptyCartDiv.innerHTML = ''
+    const emptyIllustration = document.createElement('IMG')
+    emptyIllustration.setAttribute('src', './assets/images/undraw_searching_re_3ra9.svg')
+    emptyIllustration.setAttribute('alt', 'search-illustration')
+    emptyIllustration.className = 'empty-cart-illustration'
+
+    
+    const emptyCart = document.createElement('P')
+    emptyCart.className = 'empty-cart-text'
+    emptyCart.textContent = `El carrito está vacío ¡Comience a llenarlo de aventuras!`
+    emptyCartDiv.appendChild(emptyIllustration)
+    emptyCartDiv.appendChild(emptyCart)
+    emptyCartDiv.classList.toggle('active')
 }

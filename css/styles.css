@@ -5,13 +5,12 @@
 }
 
 .headersec {
-  position: sticky;
   top: 0px;
+  margin: 0 auto;
   z-index: 10;
 }
 
 .navbar {
-  margin: 0 auto;
   width: 80vw;
   height: 70px;
   border-bottom-left-radius: 2em;
@@ -59,10 +58,12 @@
   position: absolute;
   margin-left: 2px;
   font-size: 0.8em;
-  color: hsl(29deg, 100%, 50%);
+  font-weight: 600;
+  color: hsl(283deg, 100%, 60%);
 }
 
 .bars__menu {
+  position: relative;
   display: none;
   text-align: center;
   width: 300px;
@@ -87,15 +88,33 @@
 }
 
 .activeline2__bars-menu {
+  margin-right: 40px;
   opacity: 0;
-  margin-left: -30px;
 }
 
 .activeline3__bars-menu {
   transform: rotate(-45deg) translate(-1.5px, 2px);
 }
 
+.alert-circle {
+  position: absolute;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background-color: hsl(283deg, 100%, 60%);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.alert-circle.disabled {
+  transform: scale(0.3);
+  opacity: 0;
+}
+
 @media screen and (max-width: 1280px) {
+  .headersec {
+    width: 100%;
+  }
   .navbar {
     width: 100%;
     gap: 50px;
@@ -130,8 +149,16 @@
     align-items: end;
   }
 }
+html {
+  height: 100%;
+}
+
 body {
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-color: #e2ebf0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .user-greet {
@@ -189,8 +216,9 @@ body {
   transform: translate(-50%, -50%);
   color: rgb(255, 255, 255);
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1.2em;
+  text-shadow: 0px 1px 2px black;
 }
 
 .travel-link:hover {
@@ -248,15 +276,14 @@ body {
   width: 80vw;
   margin: 0 auto;
   padding: 0.1em 0 0.7em;
-  margin-top: 4em;
   background-color: hsla(60deg, 5%, 8%, 0.9);
   border-top-left-radius: 2em;
   border-top-right-radius: 2em;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   color: hsla(29deg, 100%, 50%, 0.8);
+  transition: all 0.3s;
 }
 
 .footer__links {
@@ -424,7 +451,7 @@ span {
 
 .modal {
   width: 50%;
-  height: 50%;
+  height: fit-content;
   min-height: 400px;
   background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   opacity: 1;
@@ -457,8 +484,10 @@ span {
 }
 
 .detail__img-container {
-  height: 40%;
-  width: 40%;
+  height: 300px;
+  width: 300px;
+  border-radius: 1em;
+  margin-bottom: 1em;
 }
 
 .detail-container {
@@ -496,32 +525,57 @@ span {
   color: rgb(36, 36, 36);
 }
 
-.detail__img-container {
-  height: 300px;
-  width: 300px;
-  border-radius: 1em;
-  margin-bottom: 1em;
-}
-
 .detail__price {
   color: rgb(36, 36, 36);
   margin: 2em 0em;
 }
 
+@media screen and (max-width: 1280px) {
+  .detail-container {
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+  }
+  .detail__img-container {
+    height: 60%;
+    width: 60%;
+    border-radius: 1em;
+    margin: 0 auto;
+    margin-top: 2em;
+  }
+  .align-text {
+    text-align: center;
+  }
+  .detail-title {
+    margin-top: 0;
+  }
+  .detail__description {
+    margin: 1em 2em;
+  }
+}
+@media screen and (max-width: 640px) {
+  .modal {
+    width: 95%;
+  }
+}
 .cart-main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: fit-content;
+}
+
+.empty-cart-main-container {
+  justify-content: start;
 }
 
 .cart-items-container {
   margin: 0 auto;
   width: 80vw;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
 .cart-item-container {
@@ -592,11 +646,40 @@ span {
 }
 
 .total-div {
-  margin-top: 2em;
+  margin: 2em 0;
   border-radius: 2em;
   padding: 1.5em;
   background-color: hsla(60deg, 5%, 8%, 0.9);
   color: white;
+  text-align: center;
+}
+
+.empty-cart-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
+}
+
+.empty-cart-container.active {
+  display: flex;
+}
+
+.empty-cart-illustration {
+  margin: 2em 0;
+  width: 500px;
+}
+
+.empty-cart-text {
+  margin: 0 3em;
+  text-align: center;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 640px) {
+  .empty-cart-illustration {
+    width: 300px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

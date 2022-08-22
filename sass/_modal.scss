@@ -16,7 +16,7 @@
 
 .modal{
     width: 50%;
-    height: 50%;
+    height: fit-content;
     min-height: 400px;
     background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
     opacity: 1;
@@ -53,8 +53,10 @@
 }
 
 .detail__img-container{
-    height: 40%;
-    width: 40%;
+    height: 300px;
+    width: 300px;
+    border-radius: 1em;
+    margin-bottom: 1em;
 }
 
 // Travel detail
@@ -91,14 +93,46 @@
     margin: -5px 0px;
     color:rgb(36, 36, 36);
 }
-.detail__img-container{
-    height: 300px;
-    width: 300px;
-    border-radius: 1em;
-    margin-bottom: 1em;
-}
 
 .detail__price{
     color: rgb(36, 36, 36);
     margin: 2em 0em;
+}
+
+@media screen and (max-width: 1280px){
+    
+    .detail-container{
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        gap: 10px;
+    }
+
+    .detail__img-container{
+        height: 60%;
+        width: 60%;
+        border-radius: 1em;
+        margin: 0 auto;
+        margin-top: 2em;
+    }
+
+
+    .align-text{
+        text-align: center;
+    }
+
+    .detail-title{
+        margin-top: 0;
+    }
+
+    .detail__description{
+        margin: 1em 2em;
+    }
+
+}
+
+@media screen and (max-width: 640px){
+    .modal{
+        width: 95%;
+    }
 }

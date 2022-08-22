@@ -13,6 +13,7 @@ const navHamburger = document.getElementById('bars-menu')
 const lineOne = document.getElementById('bar-line1')
 const lineTwo = document.getElementById('bar-line2')
 const lineThree = document.getElementById('bar-line3')
+const alertCircle = document.createElement('DIV')
 
 
 // item list variables
@@ -39,8 +40,16 @@ const hamburgerMenu = () =>{
     navHamburger.addEventListener('click', displayMenu)
 }
 
+alertCircle.className = 'alert-circle'
+const alertNotification = (cart) =>{
+    if(cart.length !==0){
+        navHamburger.appendChild(alertCircle)
+    }
+}
+
 
 const displayMenu = () =>{
+    alertCircle.classList.toggle('disabled')
     lineOne.classList.toggle('activeline1__bars-menu')
     lineTwo.classList.toggle('activeline2__bars-menu')
     lineThree.classList.toggle('activeline3__bars-menu')
@@ -72,6 +81,7 @@ const displayMenu = () =>{
         if(localStorage.getItem('cart')){
             const cart = JSON.parse(localStorage.getItem('cart'))     
             navCartQuantity(cart)
+            alertNotification(cart)
         }
     }
     
@@ -81,7 +91,7 @@ const displayMenu = () =>{
             quantities.push(prod.quantity)
         })
         let totalQuantInCart = quantities.reduce((acc,value) => acc + value, 0)
-        navCartNumber.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Mis viajes <span class="cart-number">(${totalQuantInCart})</span>`
+        navCartNumber.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Mis viajes <span class="cart-number">+${totalQuantInCart}</span>`
         if(totalQuantInCart === 0){
             navCartNumber.innerHTML = `<i class="fa-solid fa-earth-americas"></i> Mis viajes`
         }
@@ -138,12 +148,12 @@ productItemsContainer.addEventListener('click', (e) =>{
         modalC.style.opacity = "1"
         modalC.style.visibility = "visible"
         modal.classList.toggle("modal-close")
-        modal.classList.add("a-class")
     }else if(e.target.dataset.name) {
         
         e.preventDefault()
         addToCart(e.target.parentElement.parentElement)
-        navCartQuantity(cart) 
+        navCartQuantity(cart)
+        alertNotification(cart)
         Swal.fire({
             title: 'Éxito',
             text: 'Agregaste el destino al carrito',
@@ -155,7 +165,7 @@ productItemsContainer.addEventListener('click', (e) =>{
 })
 
 
-
+const updateLocalStorage = (value) => localStorage.setItem("cart", JSON.stringify(value))
 
 
 

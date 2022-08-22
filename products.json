@@ -5,7 +5,7 @@
     {"id":3, "category":"brazil", "name": "Río de Janeiro", "img": "/assets/images/products-imgs/placeimg_370_370_nature (2).jpg", "price": 350, "checkin": "16 de Enero del 2023", "checkout": "23 de Enero del 2023"},
     {"id":4, "category":"brazil", "name": "Camboriú", "img": "/assets/images/products-imgs/placeimg_370_370_nature (3).jpg", "price": 390, "checkin": "11 de Febrero del 2023", "checkout": "18 de Febrero del 2023"},
 
-    {"id":5, "category":"south america", "name": "Cataratas del Iguazú", "img": "/assets/images/products-imgs/placeimg_370_370_nature (4).jpg", "price": 181.399, "checkin": "17 de Diciembre del 2022", "checkout": "29 de Diciembre del 2022"},
+    {"id":5, "category":"south america", "name": "Cataratas del Iguazú", "img": "/assets/images/products-imgs/placeimg_370_370_nature (4).jpg", "price": 400, "checkin": "17 de Diciembre del 2022", "checkout": "29 de Diciembre del 2022"},
     {"id":6, "category":"south america", "name": "Machu Picchu", "img": "/assets/images/products-imgs/placeimg_370_370_nature (5).jpg", "price": 470, "checkin": "5 de abril del 2023", "checkout": "19 de abril del 2023"},
 
     {"id":7, "category":"caribbean", "name": "Cancún", "img": "/assets/images/products-imgs/placeimg_370_370_nature (6).jpg", "price": 550, "checkin": "10 de Marzo del 2023", "checkout": "25 de Marzo del 2023"},
