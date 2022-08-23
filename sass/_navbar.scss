@@ -182,7 +182,7 @@
 
 .submenu__li:hover{
     width: 100%;
-    background-color: hsl(271, 66%, 39%);
+    background-color: hsl(271, 66%, 39%, .9);
     transition: all .5s;
 }
 .submenu__li:nth-child(6):hover{
@@ -250,9 +250,7 @@
     .submenu__li{
         border-radius: 0em;
     }
-    .submenu__li:hover{
-        background-color: hsl(238, 66%, 28%);
-    }
+    
     .submenu__li:nth-child(6):hover{
         border-bottom-left-radius: 0em;
         border-bottom-right-radius: 0em;
