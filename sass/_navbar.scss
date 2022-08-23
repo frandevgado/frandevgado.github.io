@@ -5,7 +5,7 @@
 }
 
 .headersec{
-    // position: sticky;
+    position: sticky;
     top: 0px;
     margin: 0 auto;
     z-index: 10;
@@ -230,6 +230,9 @@
         width: 100%;
         transition: all 1s;
     }
+    .navbar__li:nth-child(1):hover{
+        width: 50%;
+    }
 
     .navbar__menu.active{
         left: 0;
@@ -244,16 +247,17 @@
     .sub-menu{
         left: 0;
         right: 0;
-        border-radius: 0;
+        border-bottom-left-radius: 2em;
+        border-bottom-right-radius: 2em;
     }
 
     .submenu__li{
-        border-radius: 0em;
+        border-radius: 1em;
     }
     
     .submenu__li:nth-child(6):hover{
-        border-bottom-left-radius: 0em;
-        border-bottom-right-radius: 0em;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
     }
     
 }
