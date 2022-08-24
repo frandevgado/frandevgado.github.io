@@ -46,6 +46,7 @@
     
     font-size: 1em;
     color: white;
+    transition: all .1s;
 }
 
 .navbar__li:hover{
@@ -68,6 +69,12 @@
     padding-top: 7px;
     margin-left: 3em;
     width: 200px;
+    transition: transform 1s;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+    transition: transform 1s;
 }
 
 
@@ -251,6 +258,7 @@
         border-bottom-right-radius: 2em;
     }
 
+
     .submenu__li{
         border-radius: 1em;
     }
@@ -260,4 +268,11 @@
         border-top-right-radius: 1em;
     }
     
+}
+
+@media screen and (max-width: 640px) {
+    .navbar{
+
+        gap: 30px;
+    }
 }

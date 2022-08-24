@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;900&display=swap" rel="stylesheet">
+    <title>notRealTravel</title>
+</head>
+<body>
+    
+    <header class="headersec">
+        <nav id="navbar" class="navbar">
+                <a href="/index.html"><img src="/assets/logo/notRealTravel.png" class="logo" alt="logo"></a>
+            <ul id="navbar-menu" class="navbar__menu">
+                <li class="navbar__li submenu-father"><a href="./destinos.html" class="navbar__item-link">Destinos</a>
+                    <ul class="sub-menu">
+                        <li class="submenu__li"><a class="submenu__link" href="/pages/argentina.html">Argentina</a></li>
+                        <li class="submenu__li"><a class="submenu__link" href="/pages/brasil.html">Brasil</a></li>
+                        <li class="submenu__li"><a class="submenu__link" href="/pages/caribe.html">Caribe</a></li>
+                        <li class="submenu__li"><a class="submenu__link" href="/pages/sudamerica.html">Sudamérica</a></li>  
+                        <li class="submenu__li"><a class="submenu__link" href="/pages/europa.html">Europa</a></li>
+                        <li class="submenu__li"><a class="submenu__link" href="/pages/exotico.html">Exótico</a></li>
+                    </ul>
+                </li>
+                <li class="navbar__li"><a href="#" class="navbar__item-link">Quiénes somos</a></li>
+                <li class="navbar__li"><a href="./contacto.html" class="navbar__item-link">Contacto</a></li>
+                <li class="navbar__li navbar__li--cart" ><a href="./cart.html" id="cart-number" class="navbar__item-link number-align"><i class="fa-solid fa-earth-americas"></i></a></li>
+            </ul>
+            <div id="bars-menu" class="bars__menu">
+                <span id="bar-line1" class="line1__bars-menu"></span>
+                <span id="bar-line2" class="line2__bars-menu"></span>
+                <span id="bar-line3" class="line3__bars-menu"></span>
+            </div>
+        </nav>
+    </header>
+
+    <div><h1 class="body-title" id="h1">¡Mira todos nuestros destinos!</h1></div>
+
+    <main class="main-container">
+        <div class="des-items-container" id="products-container"></div>
+        <div class="modal-container">
+            <div class="modal modal-close">
+                <p class="close">x</p>
+                    <div class="detail-container" id="detail-container">
+                        <div class="left-center">
+                            <img src="" alt="destino" class="detail__img-container" id="detail-img">
+                        </div>
+                        <div class="right-center">
+                            <h3 class="align-text detail__title" id="detail-title"></h3>
+                            <p class="align-text detail__description" id="card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ut adipisci saepe eos quis, pariatur labore corrupti maxime molestias natus!</p>
+                            <p class="align-text detail__check " id="detail-checkin"></p>
+                            <p class="align-text detail__check " id="detail-checkout"></p>
+                            <h5 class="align-text detail__price" id="detail-price"></h5>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+    <footer class="footersec">
+        <h2 class="social-title">Sociales</h2>
+        <ul class="footer__links">
+            <li class="social-li"><a class="social-link" href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+            <li class="social-li"><a class="social-link" href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+            <li class="social-li"><a class="social-link" href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+        </ul>
+        <p class="copyrights">NotRealTravel® | Franco Delgado</p>
+    </footer>
+
+
+    <template class="card-template" id="card-template">
+        <div class="card-container" id="card-container">
+            <h3 class="card__title" id="card-title"></h3>
+            <img src="" alt="destino" class="card__img-container" id="card-img">
+            <p class="description" id="card"></p>
+            <p class="card__check card__check--in" id="card-checkin"></p>
+            <p class="card__check card__check--out" id="card-checkout"></p>
+            <h5 class="card__price" id="card-price"></h5>
+            <div>
+                <a href="#" class="btn cta">Detalle</a>
+                <a href="#" id="buy-btn" class="btn buy-btn">Agregar al carrito</a>
+            </div>
+        </div>
+    </template>
+
+    <script src="/scripts/destinos.js"></script>
+    <script src="https://kit.fontawesome.com/057012141a.js" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>

@@ -10,7 +10,6 @@ const divTotalPrice = document.getElementById('total-price-cart')
 const emptyCartDiv = document.getElementById('empty-cart-div')
 const cartMainContainer = document.getElementById('cart-main-container')
 
-
 const navCartNumber = document.getElementById('cart-number')
 
 const fragment = document.createDocumentFragment()
@@ -54,7 +53,6 @@ const navCartQuantity = (cart) =>{
     }
 }
 
-
 const updateItemsInCart = itemsInCart =>{
     allItemsContainer.innerHTML = ''
     itemsInCart.forEach(product => {
@@ -79,7 +77,6 @@ const updateItemsInCart = itemsInCart =>{
     cartData(itemsInCart)
 }
 
-
 const removeItemFromCart = (prodId) =>{
     const cart = JSON.parse(localStorage.getItem('cart'))
 
@@ -91,10 +88,7 @@ const removeItemFromCart = (prodId) =>{
     updateLocalStorage(cart)
 }
 
-
 const updateLocalStorage = (value) => localStorage.setItem("cart", JSON.stringify(value))
-
-
 
 const decreaseQuantity = (prodId) =>{
     const cart = JSON.parse(localStorage.getItem('cart'))
@@ -114,7 +108,6 @@ const decreaseQuantity = (prodId) =>{
     updateItemsInCart(cart)
     cartData(cart)
 }
-
 
 const increaseQuantity = (prodId) =>{
     const cart = JSON.parse(localStorage.getItem('cart'))
@@ -146,7 +139,7 @@ const cartData = (cart) =>{
 const emptyCartNotice = () =>{
     emptyCartDiv.innerHTML = ''
     const emptyIllustration = document.createElement('IMG')
-    emptyIllustration.setAttribute('src', './assets/images/undraw_searching_re_3ra9.svg')
+    emptyIllustration.setAttribute('src', '/assets/images/undraw_searching_re_3ra9.svg')
     emptyIllustration.setAttribute('alt', 'search-illustration')
     emptyIllustration.className = 'empty-cart-illustration'
 

@@ -15,7 +15,6 @@ const lineTwo = document.getElementById('bar-line2')
 const lineThree = document.getElementById('bar-line3')
 const alertCircle = document.createElement('DIV')
 
-
 // item list variables
 const productItemsContainer = document.getElementById('products-container')
 const cardTemplate = document.getElementById('card-template').content
@@ -47,7 +46,6 @@ const alertNotification = (cart) =>{
     }
 }
 
-
 const displayMenu = () =>{
     alertCircle.classList.toggle('disabled')
     lineOne.classList.toggle('activeline1__bars-menu')
@@ -57,12 +55,10 @@ const displayMenu = () =>{
     navBar.classList.toggle('active')
 }
 
-
 // logica para traer y "pintar" los productos
-
     const fetchData = async () =>{
         try{
-            const res = await fetch ('products.json')
+            const res = await fetch ('/products.json')
             const data = await res.json()
             printCards(data)
         } catch (error) {
@@ -98,6 +94,7 @@ const displayMenu = () =>{
     }
     
     const printCards = data =>{
+        if(location.pathname === '/pages/destinos.html'){
         data.forEach(product =>{
             cardTemplate.querySelector('.card-container').setAttribute('id', product.id)
             cardTemplate.querySelector('h3').textContent = product.name
@@ -110,16 +107,48 @@ const displayMenu = () =>{
 
         const clone = cardTemplate.cloneNode(true)
         fragment.appendChild(clone)
-    })
+        })
+    } else if(location.pathname === '/pages/argentina.html'){
+        const desArg = data.filter(prod => prod.category == 'argentina')
+        printByCategory(desArg)
+    } else if(location.pathname === '/pages/brasil.html'){
+    const desBr = data.filter(prod => prod.category == 'brazil')
+    printByCategory(desBr)
+    } else if(location.pathname === '/pages/caribe.html'){
+        const desCar = data.filter(prod => prod.category == 'caribbean')
+        printByCategory(desCar)
+    } else if(location.pathname === '/pages/sudamerica.html'){
+        const desSouthA = data.filter(prod => prod.category == 'south america')
+        printByCategory(desSouthA)
+    } else if(location.pathname === '/pages/europa.html'){
+        const desEurope = data.filter(prod => prod.category == 'europe')
+        printByCategory(desEurope)
+    } else if(location.pathname === '/pages/exotico.html'){
+        const desExotic = data.filter(prod => prod.category == 'exotic')
+        printByCategory(desExotic)
+    } 
     productItemsContainer.appendChild(fragment)
 }
 
+const printByCategory = (destinations) =>{
+destinations.forEach(product =>{
+    cardTemplate.querySelector('.card-container').setAttribute('id', product.id)
+    cardTemplate.querySelector('h3').textContent = product.name
+    cardTemplate.querySelector('h5').innerHTML = `Precio: <span> $</span><span>${product.price}</span>`
+    cardTemplate.querySelector('img').setAttribute("src", product.img)
+    cardTemplate.querySelector('.cta').dataset.id = product.id
+    cardTemplate.querySelector('.buy-btn').dataset.name = product.name
+    cardTemplate.querySelector('.card__check--in').textContent = `Desde: ${product.checkin}`
+    cardTemplate.querySelector('.card__check--out').textContent = `Hasta: ${product.checkout}`
+
+    const clone = cardTemplate.cloneNode(true)
+    fragment.appendChild(clone)
+})
+}
+
 // LOGIC - MODAL / DETAIL
-
-
 // Convierto el div en un objeto
 const setProductDetail = object =>{
-    
    const product = {
     id: object.querySelector('.cta').dataset.id,
     name: object.querySelector('h3').textContent,
@@ -140,10 +169,9 @@ const printProductDetail = (product) => {
     detailCheckIn.textContent = product.checkin
     detailCheckOut.textContent = product.checkout
 }
-
-
 productItemsContainer.addEventListener('click', (e) =>{
     if(e.target.dataset.id){
+        e.preventDefault()
         setProductDetail(e.target.parentElement.parentElement)
         modalC.style.opacity = "1"
         modalC.style.visibility = "visible"
@@ -164,11 +192,7 @@ productItemsContainer.addEventListener('click', (e) =>{
     e.stopPropagation()
 })
 
-
 const updateLocalStorage = (value) => localStorage.setItem("cart", JSON.stringify(value))
-
-
-
 
 // CloseModalHandler
 const closeModal = (e) =>{
@@ -191,11 +215,7 @@ modalC.addEventListener('click', (e) =>{
     if(e.target.classList.contains('modal-container')) closeModal()
 })
 
-
-
-
 //  LOGIC - ADD TO CART **
-
 //  // comprobar si el producto ya está en el carrito
     const idIsInCart = (id) => cart.some( prod => prod.id === id) 
     

@@ -28,9 +28,7 @@ const alertNotification = (cart) =>{
     }
 }
 
-
 const updateLocalStorage = (value) => localStorage.setItem("cart", JSON.stringify(value))
-
 
 const navCartQuantity = (cart) =>{
     let quantities = []
@@ -45,7 +43,6 @@ const navCartQuantity = (cart) =>{
 }
 
 // Hamburger menu
-
 
 const hamburgerMenu = () =>{
     navHamburger.addEventListener('click', displayMenu)

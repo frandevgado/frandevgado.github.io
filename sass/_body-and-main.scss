@@ -10,16 +10,14 @@ body{
     justify-content: space-between;
 }
 
-.user-greet{
-    margin: 1em 0 .5em 0;
-    
-    font-size: 2em;
-}
 
-.title{
-    margin-bottom: 1em;
-    
-    color: hsl(29, 100%, 50%);
+
+.body-title{
+    width:fit-content;
+    margin: 0 auto;
+
+    color: hsla(60, 5%, 8%, .9);
+    padding: 1em 0em;
 }
 
 .main-home-container{
@@ -31,7 +29,7 @@ body{
 
 
 .travel-container{
-    margin: 0 auto;
+    margin: 2em auto 6em;
     width: 65vw;
     
     display: flex;
@@ -65,6 +63,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform .5s
+}
+
+.img-container:hover{
+    transform: scale(.9);
+    transition: transform .5s;
 }
 
 .travel-link{
@@ -89,42 +93,94 @@ body{
     margin: 2em auto;
     padding: 1em 0em;
     border-radius: 2em;
-    background-color: hsla(0, 100%, 100%, 0.25);
+    background-color: hsl(29, 100%, 50%);
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1em;
+
+    color: white;
 }
 
 .form__contact-title{
-    font-size: 2em;
+    font-size: 1.6em;
     font-weight: 500;
 }
+
 
 .flex-form{
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
 }
+
+.input-placeholder{
+    margin: .3em 0;
+    padding: .5em;
+    border-radius: 1em;
+    border-style: solid;
+
+    font-weight: 600;
+}
+
+.input-placeholder:focus{
+   color: hsl(60, 5%, 15%);
+   outline-color: hsla(60, 5%, 8%, .9);
+}
+
 
 .menssage-title{
     margin: 0 auto;
     margin-top: 1em;
+    font-size: 1em;
+    font-weight: 600;
 }
 
 .text-area{
     margin: .5em auto;
     resize:none;
     width: 300px; height: 150px;
+    border-radius: 1em;
+    padding: 1em;
     
 }
 
+::-webkit-scrollbar{
+    padding: .3em;
+    border-radius: 2em;
+    background: #090909;
+    width: 13px;
+ }
+ ::-webkit-scrollbar-thumb{
+    border-radius: 2em;
+     background: #535353;
+     width: 15px;
+ }
+ ::-webkit-scrollbar-thumb:hover{
+     background-color: #333;
+ }
+ 
+ ::-webkit-scrollbar-thumb:active{
+     background-color: #555;
+ }
+
 
 .sbt-button{
-    margin: 0 auto;
-    display: inline-block;
     width: 150px;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 1em;
+    border-style: none;
+    background-color:  hsla(60, 5%, 8%, .9);
+
+    display: inline-block;
+    cursor: pointer;
+
+    color: white;
+}
+
+.sbt-button:active{
+    background-color:  rgba(0, 0, 0, 0.9);
 }
 
 
@@ -133,6 +189,15 @@ body{
     
     .title{
         font-size: 1.5em;
+    }
+
+    .text-area{
+        margin: .5em auto;
+        resize:none;
+        width: 80%;
+        border-radius: 1em;
+        padding: 1em;
+        
     }
 
 }
