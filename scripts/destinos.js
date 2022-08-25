@@ -12,9 +12,9 @@ const navCartNumber = document.getElementById('cart-number')
 const navBar = document.getElementById('navbar')
 const navMenu = document.getElementById('navbar-menu')
 const navHamburger = document.getElementById('bars-menu')
-const lineOne = document.getElementById('bar-line1')
-const lineTwo = document.getElementById('bar-line2')
-const lineThree = document.getElementById('bar-line3')
+const lineOne = document.getElementById('bar-line-top')
+const lineTwo = document.getElementById('bar-line-middle')
+const lineThree = document.getElementById('bar-line-bottom')
 const alertCircle = document.createElement('DIV')
 
 // item list variables
@@ -50,9 +50,9 @@ const alertNotification = (cart) =>{
 
 const displayMenu = () =>{
     alertCircle.classList.toggle('disabled')
-    lineOne.classList.toggle('activeline1__bars-menu')
-    lineTwo.classList.toggle('activeline2__bars-menu')
-    lineThree.classList.toggle('activeline3__bars-menu')
+    lineOne.classList.toggle('activebars-menu__line--top')
+    lineTwo.classList.toggle('activebars-menu__line--middle')
+    lineThree.classList.toggle('activebars-menu__line--bottom')
     navMenu.classList.toggle('active')
     navBar.classList.toggle('active')
 }
@@ -101,7 +101,7 @@ const displayMenu = () =>{
         cardTemplate.querySelector('h5').innerHTML = `Precio: <span> $</span><span>${product.price}</span>`
         cardTemplate.querySelector('img').setAttribute("src", product.img)
         cardTemplate.querySelector('.cta').dataset.id = product.id
-        cardTemplate.querySelector('.buy-btn').dataset.name = product.name
+        cardTemplate.querySelector('.btn--buy').dataset.name = product.name
         cardTemplate.querySelector('.card__check--in').textContent = `Desde: ${product.checkin}`
         cardTemplate.querySelector('.card__check--out').textContent = `Hasta: ${product.checkout}`
 
@@ -137,7 +137,7 @@ destinations.forEach(product =>{
     cardTemplate.querySelector('h5').innerHTML = `Precio: <span> $</span><span>${product.price}</span>`
     cardTemplate.querySelector('img').setAttribute("src", product.img)
     cardTemplate.querySelector('.cta').dataset.id = product.id
-    cardTemplate.querySelector('.buy-btn').dataset.name = product.name
+    cardTemplate.querySelector('.btn--buy').dataset.name = product.name
     cardTemplate.querySelector('.card__check--in').textContent = `Desde: ${product.checkin}`
     cardTemplate.querySelector('.card__check--out').textContent = `Hasta: ${product.checkout}`
 
@@ -173,7 +173,7 @@ productItemsContainer.addEventListener('click', (e) =>{
         setProductDetail(e.target.parentElement.parentElement)
         modalC.style.opacity = "1"
         modalC.style.visibility = "visible"
-        modal.classList.toggle("modal-close")
+        modal.classList.toggle("modal--close")
     }else if(e.target.dataset.name) {
         
         e.preventDefault()
@@ -193,7 +193,7 @@ productItemsContainer.addEventListener('click', (e) =>{
 const updateLocalStorage = (value) => localStorage.setItem("cart", JSON.stringify(value))
 
 const closeModal = (e) =>{
-    modal.classList.toggle("modal-close")
+    modal.classList.toggle("modal--close")
 
     setTimeout(() =>{
         modalC.style.opacity = "0"

@@ -33,7 +33,7 @@
     transform: translateY(0%);
 }
 
-.modal-close{
+.modal--close{
     transform: translateY(-200%);
 }
 
@@ -70,12 +70,12 @@
     gap: 50px;
 }
 
-.left-center{
+.left-align{
     display:flex;
     align-items: center;
 }
 
-.right-center{
+.right-align{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -86,19 +86,19 @@
     color: hsl(0, 0%, 14%);
 }
 
-.detail__title{
+.detail__text--title{
     margin: 0;
 }
 
-.detail__description{
+.detail__text--description{
     margin-bottom: 1em;
 }
 
-.detail__check{
+.detail__text--check{
     margin: -5px 0px;
 }
 
-.detail__price{
+.detail__text--price{
     margin: 2em 0em;
 }
 
@@ -119,15 +119,15 @@
         margin-top: 2em;
     }
 
-    .detail-text{
+    .detail__text{
         text-align: center;
     }
 
-    .detail-title{
+    .detail__text--title{
         margin-top: 0;
     }
 
-    .detail__description{
+    .detail__text--description{
         margin: .8em 2em;
     }
 

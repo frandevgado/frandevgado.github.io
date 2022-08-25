@@ -2,9 +2,9 @@ const navCartNumber = document.getElementById('cart-number')
 const navBar = document.getElementById('navbar')
 const navMenu = document.getElementById('navbar-menu')
 const navHamburger = document.getElementById('bars-menu')
-const lineOne = document.getElementById('bar-line1')
-const lineTwo = document.getElementById('bar-line2')
-const lineThree = document.getElementById('bar-line3')
+const lineOne = document.getElementById('bar-line-top')
+const lineTwo = document.getElementById('bar-line-middle')
+const lineThree = document.getElementById('bar-line-bottom')
 const alertCircle = document.createElement('DIV')
 
 document.addEventListener('DOMContentLoaded', () =>{
@@ -51,7 +51,7 @@ const displayMenu = () =>{
     alertCircle.classList.toggle('disabled')
     navMenu.classList.toggle('active') 
     navBar.classList.toggle('active')
-    lineOne.classList.toggle('activeline1__bars-menu')
-    lineTwo.classList.toggle('activeline2__bars-menu')
-    lineThree.classList.toggle('activeline3__bars-menu')
+    lineOne.classList.toggle('activebars-menu__line--top')
+    lineTwo.classList.toggle('activebars-menu__line--middle')
+    lineThree.classList.toggle('activebars-menu__line--bottom')
 }

@@ -90,7 +90,7 @@
 }
 
 // HAMBURGER MENU
-.bars__menu{
+.bars-menu{
     display: none;
     position: relative;
     margin-right: 3em;
@@ -101,7 +101,7 @@
     cursor: pointer;
 }
 
-.bars__menu span{
+.bars-menu__line{
     display: block;
     margin-top: 6px;
     width: 30px;
@@ -113,16 +113,17 @@
     transition: all 300ms;
 }
 
-.activeline1__bars-menu{
+.activebars-menu__line--top{
     transform: rotate(45deg) translate(-1.5px, 1px);
 }
-.activeline2__bars-menu{
+
+.activebars-menu__line--middle{
     margin-right: 40px;
     opacity: 0;
 }
-.activeline3__bars-menu{
+
+.activebars-menu__line--bottom{
     transform: rotate(-45deg) translate(-1.5px, 2px);
-    
 }
 
 .alert-circle{
@@ -196,7 +197,7 @@
     background-color: hsl(271, 66%, 39%, .9);
     transition: all .5s;
 }
-.submenu__li:nth-child(6):hover{
+.submenu__li--last:hover{
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
 }
@@ -252,7 +253,7 @@
         left: 0;
     }
 
-    .bars__menu{
+    .bars-menu{
         display: flex;
         flex-direction:column;
         align-items: end;

@@ -79,7 +79,7 @@
   color: hsl(283deg, 100%, 60%);
 }
 
-.bars__menu {
+.bars-menu {
   display: none;
   position: relative;
   margin-right: 3em;
@@ -89,7 +89,7 @@
   cursor: pointer;
 }
 
-.bars__menu span {
+.bars-menu__line {
   display: block;
   margin-top: 6px;
   width: 30px;
@@ -100,16 +100,16 @@
   transition: all 300ms;
 }
 
-.activeline1__bars-menu {
+.activebars-menu__line--top {
   transform: rotate(45deg) translate(-1.5px, 1px);
 }
 
-.activeline2__bars-menu {
+.activebars-menu__line--middle {
   margin-right: 40px;
   opacity: 0;
 }
 
-.activeline3__bars-menu {
+.activebars-menu__line--bottom {
   transform: rotate(-45deg) translate(-1.5px, 2px);
 }
 
@@ -179,7 +179,7 @@
   transition: all 0.5s;
 }
 
-.submenu__li:nth-child(6):hover {
+.submenu__li--last:hover {
   border-bottom-left-radius: 2em;
   border-bottom-right-radius: 2em;
 }
@@ -223,7 +223,7 @@
   .navbar__menu.active {
     left: 0;
   }
-  .bars__menu {
+  .bars-menu {
     display: flex;
     flex-direction: column;
     align-items: end;
@@ -368,7 +368,7 @@ body {
     font-size: 1.5em;
   }
 }
-.footersec {
+.footer {
   margin: 0 auto;
   padding: 0.1em 0 0.7em;
   width: 80vw;
@@ -397,11 +397,11 @@ body {
   font-weight: 500;
 }
 
-.social-li {
+.social__li {
   list-style-type: none;
 }
 
-.social-link {
+.social__link {
   text-decoration: none;
   color: #fff;
 }
@@ -473,7 +473,7 @@ body {
   color: hsl(0deg, 0%, 96%);
 }
 
-.buy-btn {
+.btn--buy {
   background-color: hsla(120deg, 100%, 25%, 0.692);
 }
 
@@ -557,7 +557,7 @@ span {
   transform: translateY(0%);
 }
 
-.modal-close {
+.modal--close {
   transform: translateY(-200%);
 }
 
@@ -590,12 +590,12 @@ span {
   gap: 50px;
 }
 
-.left-center {
+.left-align {
   display: flex;
   align-items: center;
 }
 
-.right-center {
+.right-align {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -606,19 +606,19 @@ span {
   color: hsl(0deg, 0%, 14%);
 }
 
-.detail__title {
+.detail__text--title {
   margin: 0;
 }
 
-.detail__description {
+.detail__text--description {
   margin-bottom: 1em;
 }
 
-.detail__check {
+.detail__text--check {
   margin: -5px 0px;
 }
 
-.detail__price {
+.detail__text--price {
   margin: 2em 0em;
 }
 
@@ -636,13 +636,13 @@ span {
     margin: 0 auto;
     margin-top: 2em;
   }
-  .detail-text {
+  .detail__text {
     text-align: center;
   }
-  .detail-title {
+  .detail__text--title {
     margin-top: 0;
   }
-  .detail__description {
+  .detail__text--description {
     margin: 0.8em 2em;
   }
 }
