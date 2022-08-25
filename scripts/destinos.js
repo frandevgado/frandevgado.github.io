@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
 })
 
+const navCartNumber = document.getElementById('cart-number')
+
 // hamburger menu variables
 const navBar = document.getElementById('navbar')
 const navMenu = document.getElementById('navbar-menu')
@@ -55,7 +57,6 @@ const displayMenu = () =>{
     navBar.classList.toggle('active')
 }
 
-// logica para traer y "pintar" los productos
     const fetchData = async () =>{
         try{
             const res = await fetch ('/products.json')
@@ -65,9 +66,8 @@ const displayMenu = () =>{
             console.log(error)
         }
     }
-    
-    const navCartNumber = document.getElementById('cart-number')
 
+    
     document.addEventListener('DOMContentLoaded', () =>{
         fetchCart()
         hamburgerMenu()
@@ -147,7 +147,6 @@ destinations.forEach(product =>{
 }
 
 // LOGIC - MODAL / DETAIL
-// Convierto el div en un objeto
 const setProductDetail = object =>{
    const product = {
     id: object.querySelector('.cta').dataset.id,
@@ -160,7 +159,6 @@ const setProductDetail = object =>{
     printProductDetail(product)
 }
 
-// Renderizo los detalles del producto en el modal dinamicamente
 const printProductDetail = (product) => {
     detailTitle.textContent = product.name
     detailImg.setAttribute('src', product.img)
@@ -194,7 +192,6 @@ productItemsContainer.addEventListener('click', (e) =>{
 
 const updateLocalStorage = (value) => localStorage.setItem("cart", JSON.stringify(value))
 
-// CloseModalHandler
 const closeModal = (e) =>{
     modal.classList.toggle("modal-close")
 
@@ -205,24 +202,19 @@ const closeModal = (e) =>{
 
 }
 
-// Cerrar al hacer click en la cruz
 closeM.addEventListener( "click", (e) =>{
     closeModal()
     e.stopPropagation()})
 
-// Cerrar modal al clickear fuera del modal
 modalC.addEventListener('click', (e) =>{
     if(e.target.classList.contains('modal-container')) closeModal()
 })
 
 //  LOGIC - ADD TO CART **
-//  // comprobar si el producto ya está en el carrito
     const idIsInCart = (id) => cart.some( prod => prod.id === id) 
     
-    // contenedor de productos en el carro
     let cart = []
     
-    // función para agregar al carrito
     const addToCart = (object) =>{
         const product = {
             id: object.querySelector('.cta').dataset.id,

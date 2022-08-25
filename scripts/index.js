@@ -43,7 +43,6 @@ const navCartQuantity = (cart) =>{
 }
 
 // Hamburger menu
-
 const hamburgerMenu = () =>{
     navHamburger.addEventListener('click', displayMenu)
 }

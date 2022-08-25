@@ -14,7 +14,6 @@ const navCartNumber = document.getElementById('cart-number')
 
 const fragment = document.createDocumentFragment()
 
-// hamburger menu variables
 const navBar = document.getElementById('navbar')
 const navMenu = document.getElementById('navbar-menu')
 const navHamburger = document.getElementById('bars-menu')
@@ -143,7 +142,6 @@ const emptyCartNotice = () =>{
     emptyIllustration.setAttribute('alt', 'search-illustration')
     emptyIllustration.className = 'empty-cart-illustration'
 
-    
     const emptyCart = document.createElement('P')
     emptyCart.className = 'empty-cart-text'
     emptyCart.textContent = `El carrito está vacío ¡Comience a llenarlo de aventuras!`

@@ -1,10 +1,7 @@
 @use 'navbar';
-@use 'body-and-main';
+@use 'index';
 @use 'footer';
 @use 'destinations';
 @use 'modal';
 @use 'cart';
-@use 'category';
-
-$primary-color: hsl(29, 100%, 50%);
-$secundary-color: hsl(147, 50%, 50%);
+@use 'contact';

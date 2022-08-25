@@ -29,6 +29,7 @@
 .navbar__menu{
     width: fit-content;
     height: 4em;
+
     display: flex;
     justify-content: end;
     align-items: center;
@@ -39,13 +40,14 @@
 .navbar__li{
     padding: 1em;
     width: 130px;
-    text-align: center;
     border-radius: 1em;
-    background: none;
     list-style-type: none;
+    background: none;
+    text-align: center;
     
     font-size: 1em;
     color: white;
+
     transition: all .1s;
 }
 
@@ -62,13 +64,15 @@
 .navbar__item-link:hover{
     text-decoration: none;
     color:  hsl(60, 5%, 8%);
+
     transition: color .6s;
 }
 
 .logo{
-    padding-top: 7px;
     margin-left: 3em;
+    padding-top: 7px;
     width: 200px;
+
     transition: transform 1s;
 }
 
@@ -77,36 +81,36 @@
     transition: transform 1s;
 }
 
-
 .cart-number{
     position: absolute;
+
     font-size: .8em;
     font-weight: 600;
     color: hsl(283, 100%, 60%);
 }
 
-
-// MENU HAMBURGUESA
-
+// HAMBURGER MENU
 .bars__menu{
-    position: relative;
     display: none;
-    text-align: center;
+    position: relative;
+    margin-right: 3em;
     width: 300px;
     height: 30px;
+    text-align: center;
+
     cursor: pointer;
-    margin-right: 3em;
 }
 
 .bars__menu span{
     display: block;
-    width: 30px;
-    background-color: hsla(29, 100%, 50%, .8);
-    height: 3px;
     margin-top: 6px;
+    width: 30px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: hsla(29, 100%, 50%, .8);
+
     transform-origin: 0px 100%;
     transition: all 300ms;
-    border-radius: 2px;
 }
 
 .activeline1__bars-menu{
@@ -126,8 +130,9 @@
     right: -2px;
     width: 10px;
     height: 10px;
-    background-color: hsl(283, 100%, 60%);
     border-radius: 50%;
+    background-color: hsl(283, 100%, 60%);
+
     transition: all .3s;
 }
 
@@ -141,8 +146,7 @@
     opacity: 1;
 }
 
-// SUBMENU DESTINOS
-
+// DESTINATIONS SUBMENU
 .submenu-father{
     position: relative;
 }
@@ -154,32 +158,32 @@
 
 .sub-menu{
     position:absolute;
-    top: 3.5em;
-    left: 0px;
-    right: 0;
     padding: 9px;
+    top: 3.5em;
+    right: 0;
+    left: 0px;
     background-color: hsla(60, 5%, 8%);
     border-bottom-left-radius: 2em;
     border-bottom-right-radius: 2em;
-    
-    color: white;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 1s;
+    z-index: 1;
     
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    z-index: 1;
+    color: white;
+
+    transition: opacity 1s;
 }
 
 
 .submenu__li{
-    list-style: none;
     padding: .5em 0;
     width: fit-content;
     border-radius: 1em;
+    list-style: none;
 }
 
 .submenu__link{
@@ -198,29 +202,32 @@
 }
 
 @media screen and (max-width: 1280px) {
+
     .headersec{
         width: 100%;
     }
 
     .navbar{
         width: 100%;
-        gap: 50px;
         justify-content: space-evenly;
+        gap: 50px;
+
         transition: .3s;
     }
 
     .navbar__menu{
         position: fixed;
-        height: fit-content;
         left: -100%;
         top: 70px;
-        gap: 0px;
-        flex-direction: column;
-        background-color: hsla(60, 5%, 8%, .9);
         width: 100%;
+        height: fit-content;
         text-align: center;
-        transition: .2s all;
+        background-color: hsla(60, 5%, 8%, .9);
 
+        flex-direction: column;
+        gap: 0px;
+
+        transition: .2s all;
     }
 
     .navbar.active{
@@ -271,8 +278,9 @@
 }
 
 @media screen and (max-width: 640px) {
-    .navbar{
 
+    .navbar{
         gap: 30px;
     }
+    
 }

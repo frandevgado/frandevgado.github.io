@@ -1,0 +1,62 @@
+.form-container{
+    margin: 2em auto;
+    padding: 1em 0em;
+    width: 80vw;
+    border-radius: 2em;
+    background-color: hsl(29, 100%, 50%);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+    color: white;
+}
+
+.form__contact-title{
+    font-size: 1.6em;
+    font-weight: 500;
+}
+
+
+.flex-form{
+    display:flex;
+    flex-direction: column;
+}
+
+.input-placeholder{
+    margin: .3em 0;
+    padding: .5em;
+    border-radius: 1em;
+    border-style: solid;
+
+    font-weight: 600;
+}
+
+.input-placeholder:focus{
+   color: hsl(60, 5%, 15%);
+   outline-color: hsla(60, 5%, 8%, .9);
+}
+
+.menssage-title{
+    margin: 0 auto 1em;
+
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.text-area{
+    margin: .5em auto;
+    padding: 1em;
+    width: 300px; height: 150px;
+    resize:none;
+    border-radius: 1em;
+}
+
+@media screen and (max-width: 640px){
+
+    .text-area{
+        width: 80%;
+    }
+
+}
