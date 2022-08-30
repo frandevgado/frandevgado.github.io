@@ -237,7 +237,7 @@
   .submenu__li {
     border-radius: 1em;
   }
-  .submenu__li:nth-child(6):hover {
+  .submenu__li--last:hover {
     border-top-left-radius: 1em;
     border-top-right-radius: 1em;
   }
